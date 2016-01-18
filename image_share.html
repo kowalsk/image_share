@@ -4,10 +4,24 @@
 
 <body>
   <h1>Welcome to coursera!</h1>
-
+  <div class="container">
   {{> images}}
+</div>
 </body>
 
 <template name="images">
-  <img src="laptops.jpg" alt="lots of laptops"/>
+  <div class="row">
+  {{#each imagess}}
+  <div class="col-xs-12 col-md-3">
+    <div class="thumbnail">
+      <img src="{{img_src}}" alt="{{img_alt}}"/>
+
+      <div class="caption">
+        <h3>Thumbnail label</h3>
+        <p>description of the image</p>
+      </div>
+    </div> <!-- / col -->
+  </div>
+  {{/each}}
+</div> <!-- / row -->
 </template>
